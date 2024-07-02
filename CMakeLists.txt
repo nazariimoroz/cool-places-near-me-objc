@@ -1,18 +1,18 @@
 set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
 
 cmake_minimum_required(VERSION 3.0.0)
-project(L13)
+project(cool-places-near-me-objc)
 
 SET(CMAKE_C_COMPILER clang)
 SET(CMAKE_CXX_COMPILER clang++)
 
-add_executable(L13 
+add_executable(${PROJECT_NAME}
 	main.m
 	CoolPlacesNearMe.h
 	CoolPlacesNearMe.m
 )
 
-target_compile_options(L13 PRIVATE
+target_compile_options(${PROJECT_NAME}  PRIVATE
 	-MMD 
 	-MP 
 	-DGNUSTEP 
@@ -43,6 +43,6 @@ target_compile_options(L13 PRIVATE
 	-I./libobjc2
 )
 
-target_link_libraries(L13 gnustep-base objc BlocksRuntime m)
+target_link_libraries(${PROJECT_NAME}  gnustep-base objc BlocksRuntime m)
 
-target_include_directories(L13 PRIVATE usr/include/GNUstep/)
+target_include_directories(${PROJECT_NAME}  PRIVATE usr/include/GNUstep/)
